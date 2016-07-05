@@ -68,7 +68,7 @@
                 <aspects>Aspect</aspects>
             </groups>
             <modules>
-                <Danslo_Aop />
+                <Danslo_Aop/>
             </modules>
         </suite>
     </phpunit>

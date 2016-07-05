@@ -1,9 +1,7 @@
 <?php
 
-class Danslo_Aop_Test_Model_Autoloader
-    extends Danslo_Aop_Test_Case
+class Danslo_Aop_Test_Model_Autoloader extends Danslo_Aop_Test_Case
 {
-
     /**
      * @return array
      */
@@ -15,6 +13,7 @@ class Danslo_Aop_Test_Model_Autoloader
                 $autoloaders[] = get_class($autoloader[0]);
             }
         }
+
         return $autoloaders;
     }
 
@@ -36,5 +35,4 @@ class Danslo_Aop_Test_Model_Autoloader
         $aopPosition = array_search('Danslo_Aop_Model_Autoloader', $autoloaders);
         $this->assertTrue($varienPosition === false || $varienPosition > $aopPosition);
     }
-
 }

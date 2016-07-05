@@ -1,9 +1,7 @@
 <?php
 
-class Danslo_Aop_Test_Aspect_Example
-    extends Danslo_Aop_Test_Case
+class Danslo_Aop_Test_Aspect_Example extends Danslo_Aop_Test_Case
 {
-
     /**
      * Test method before interception.
      *
@@ -18,5 +16,4 @@ class Danslo_Aop_Test_Aspect_Example
         // Now verify that it was in the list of intercepted methods.
         $this->assertContains('getPage', $page->getInterceptedMethods());
     }
-
 }

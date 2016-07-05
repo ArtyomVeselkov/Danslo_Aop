@@ -1,9 +1,7 @@
 <?php
 
-class Danslo_Aop_Test_Case
-    extends EcomDev_PHPUnit_Test_Case
+class Danslo_Aop_Test_Case extends EcomDev_PHPUnit_Test_Case
 {
-
     /**
      * Set up AOP tests.
      *
@@ -21,5 +19,4 @@ class Danslo_Aop_Test_Case
         $kernel = Danslo_Aop_Aspect_Kernel::getInstance();
         $kernel->configureAop($kernel->getContainer());
     }
-
 }

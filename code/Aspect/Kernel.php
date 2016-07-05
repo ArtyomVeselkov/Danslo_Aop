@@ -3,10 +3,8 @@
 use Go\Core\AspectKernel;
 use Go\Core\AspectContainer;
 
-class Danslo_Aop_Aspect_Kernel
-    extends AspectKernel
+class Danslo_Aop_Aspect_Kernel extends AspectKernel
 {
-
     /**
      * Configuration path to aspects.
      */
@@ -37,5 +35,4 @@ class Danslo_Aop_Aspect_Kernel
             }
         }
     }
-
 }

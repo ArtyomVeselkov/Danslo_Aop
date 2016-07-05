@@ -4,8 +4,7 @@ use Go\Aop\Aspect;
 use Go\Lang\Annotation\Before;
 use Go\Aop\Intercept\MethodInvocation;
 
-class Danslo_Aop_Aspect_Example
-    implements Aspect
+class Danslo_Aop_Aspect_Example implements Aspect
 {
 
     /**
