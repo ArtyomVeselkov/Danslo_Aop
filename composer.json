@@ -1,5 +1,5 @@
 {
-  "name": "danslo/aop",
+  "name": "newtown/aop",
   "license": "MIT",
   "type": "magento-module",
   "description": "Bringing aspect oriented programming to Magento.",
@@ -18,22 +18,7 @@
     "ecomdev/ecomdev_phpunit": "0.3.*",
     "mikey179/vfsStream": "1.4.*"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/Cotya/magento-composer-installer"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/EcomDev/EcomDev_PHPUnit.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/goaop/framework.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/mikey179/vfsStream"
-    }
-  ]
+  "replace": {
+    "danslo/aop": "*"
+  }
 }
