@@ -1,9 +1,7 @@
 <?php
 
-class Danslo_Aop_Model_Observer
-    extends Mage_Core_Model_Observer
+class Danslo_Aop_Model_Observer extends Mage_Core_Model_Observer
 {
-
     /**
      * The AOP cache directory.
      */
@@ -35,10 +33,10 @@ class Danslo_Aop_Model_Observer
      */
     public static function registerAutoloader()
     {
-        if (self::$registered) {
+        if (self::$registered || !self::$initialized) {
             return;
         }
-        spl_autoload_register(array(Mage::getModel('aop/autoloader'), 'loadClass'), true, true);
+        Danslo_Aop_Model_Autoloader::init(Danslo_Aop_Aspect_Kernel::getInstance()->getContainer());
         self::$registered = true;
     }
 
@@ -52,18 +50,19 @@ class Danslo_Aop_Model_Observer
         if (self::$initialized) {
             return;
         }
-        $cacheTypes = Mage::app()->useCache();
+        $useAopCache = Mage::app()->useCache(self::AOP_CACHE_TYPE);
         $aspectKernel = Danslo_Aop_Aspect_Kernel::getInstance();
         $aspectKernel->init(array(
-            'debug'        => Mage::getIsDeveloperMode() || empty($cacheTypes[self::AOP_CACHE_TYPE]),
-            'cacheDir'     => self::_getCacheDir(),
+            'debug' => Mage::getIsDeveloperMode() || !$useAopCache,
+            'cacheDir' => self::_getCacheDir(),
             'excludePaths' => [
                 // Some of the PHPUnit files don't like being autoloaded by go-aop.
                 Mage::getBaseDir() . DS . 'vendor' . DS . 'phpunit',
 
                 // While this may seem counterintuitive, we don't need go-aop to do
                 // autoloading for us, as we register our own autoloader.
-                Mage::getBaseDir() . DS . 'app'
+                Mage::getBaseDir() . DS . 'app',
+                Mage::getBaseDir() . DS . 'lib'
             ]
         ));
         self::$initialized = true;
@@ -112,5 +111,4 @@ class Danslo_Aop_Model_Observer
             }
         }
     }
-
 }
