@@ -1,41 +1,39 @@
 {
-    "name": "danslo/aop",
-    "license": "MIT",
-    "type": "magento-module",
-    "description": "Bringing aspect oriented programming to Magento.",
-    "authors": [
-        {
-            "name": "Daniel Sloof"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "magento-hackathon/magento-composer-installer": "3.0.*",
-        "goaop/framework": "1.0.*",
-        "mikey179/vfsStream": "1.4.*"
-    },
-    "require-dev": {
-         "ecomdev/ecomdev_phpunit": "0.3.*"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Cotya/magento-composer-installer"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/EcomDev/EcomDev_PHPUnit.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/goaop/framework.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/mikey179/vfsStream"
-        }
-    ],
-    "extra":{
-        "magento-root-dir": "."
+  "name": "danslo/aop",
+  "license": "MIT",
+  "type": "magento-module",
+  "description": "Bringing aspect oriented programming to Magento.",
+  "authors": [
+    {
+      "name": "Daniel Sloof"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "3.0.*",
+    "ecomdev/composer_autoload": "1.0.1",
+    "goaop/framework": "1.0.*"
+  },
+  "require-dev": {
+    "ecomdev/ecomdev_phpunit": "0.3.*",
+    "mikey179/vfsStream": "1.4.*"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Cotya/magento-composer-installer"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/EcomDev/EcomDev_PHPUnit.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/goaop/framework.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/mikey179/vfsStream"
+    }
+  ]
 }

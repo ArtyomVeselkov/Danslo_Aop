@@ -12,14 +12,14 @@
          strict="false"
          verbose="false"
          bootstrap="app/code/community/EcomDev/PHPUnit/bootstrap.php">
-   <listeners>
-       <listener file="app/code/community/EcomDev/PHPUnit/Test/Listener.php" class="EcomDev_PHPUnit_Test_Listener" />
-   </listeners>
-   <testsuite name="Magento Test Suite">
+    <listeners>
+        <listener file="app/code/community/EcomDev/PHPUnit/Test/Listener.php" class="EcomDev_PHPUnit_Test_Listener"/>
+    </listeners>
+    <testsuite name="Magento Test Suite">
         <file>app/code/community/EcomDev/PHPUnit/Test/Suite.php</file>
-   </testsuite>
-   <filter>
-       <blacklist>
+    </testsuite>
+    <filter>
+        <blacklist>
             <!-- Exclude Magento Core files from code coverage -->
             <directory suffix=".php">app/code/core</directory>
             <!-- Exclude EcomDev_PHPUnit classes from code coverage -->
@@ -36,10 +36,10 @@
             <directory suffix=".php">lib/Varien</directory>
             <directory suffix=".php">lib/Zend</directory>
             <directory suffix=".php">lib/Magento</directory>
-       </blacklist>  
-   </filter>
-   <logging>
-      <log type="junit" target="var/phpunit/junit.xml" logIncompleteSkipped="false"/>
-   </logging>
+        </blacklist>
+    </filter>
+    <logging>
+        <log type="junit" target="var/phpunit/junit.xml" logIncompleteSkipped="false"/>
+    </logging>
 </phpunit>
 
