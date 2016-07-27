@@ -56,8 +56,8 @@ class Danslo_Aop_Model_Observer extends Mage_Core_Model_Observer
             'debug' => Mage::getIsDeveloperMode() || !$useAopCache,
             'cacheDir' => self::_getCacheDir(),
             'excludePaths' => [
-                // Some of the PHPUnit files don't like being autoloaded by go-aop.
-                Mage::getBaseDir() . DS . 'vendor' . DS . 'phpunit',
+                // Some of the PHPUnit files don't like being autoloaded by go-aop. EconDev Autloader is initialized before
+                dirname(Mage::getSingleton('ecomdev_composerautoload/setup')->getAutoloader()->getAutoloadFilePath() ?: Mage::getBaseDir()) . DS . 'phpunit',
 
                 // While this may seem counterintuitive, we don't need go-aop to do
                 // autoloading for us, as we register our own autoloader.
