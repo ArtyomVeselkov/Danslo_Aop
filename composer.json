@@ -10,9 +10,10 @@
   ],
   "minimum-stability": "dev",
   "require": {
+    "php": ">=5.6",
     "magento-hackathon/magento-composer-installer": "3.0.*",
     "ecomdev/composer_autoload": "1.0.1",
-    "goaop/framework": "1.0.*"
+    "goaop/framework": "^2.0.0"
   },
   "require-dev": {
     "ecomdev/ecomdev_phpunit": "0.3.*",
